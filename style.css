@@ -1,0 +1,35 @@
+/*
+ * Additional styling for the Student Marketplace.  This file augments
+ * Tailwind's utility classes with a few custom styles used throughout the
+ * application.  Because the project is deployed as a static site there is
+ * no build pipeline; this file is loaded directly in index.html.  You can
+ * freely extend or modify these rules to suit your design aesthetic.
+ */
+
+/* Notification bar transitions */
+#notification {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Rating modal stars */
+.rating-star {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #e5e7eb; /* default grey */
+}
+.rating-star.selected {
+  color: #fbbf24; /* yellow */
+}
+
+/* Scrollbar tweaks for better aesthetics in chat and lists */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 116, 139, 0.5);
+  border-radius: 3px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
