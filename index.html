@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampusTrade | Student Marketplace</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         :root {
             --primary: #4361ee;
@@ -16,28 +17,24 @@
             --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
             --transition: all 0.3s ease;
         }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
         body {
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
             color: var(--dark);
             line-height: 1.6;
             overflow-x: hidden;
         }
-        
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
         /* Header Styles */
         header {
             background: rgba(255, 255, 255, 0.95);
@@ -47,14 +44,12 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
         }
-        
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
         }
-        
         .logo {
             display: flex;
             align-items: center;
@@ -63,17 +58,14 @@
             font-weight: 700;
             color: var(--primary);
         }
-        
         .logo i {
             color: var(--accent);
         }
-        
         nav ul {
             display: flex;
             list-style: none;
             gap: 30px;
         }
-        
         nav a {
             text-decoration: none;
             color: var(--dark);
@@ -82,11 +74,9 @@
             position: relative;
             transition: var(--transition);
         }
-        
         nav a:hover {
             color: var(--primary);
         }
-        
         nav a::after {
             content: '';
             position: absolute;
@@ -97,16 +87,13 @@
             background: var(--primary);
             transition: var(--transition);
         }
-        
         nav a:hover::after {
             width: 100%;
         }
-        
         .nav-buttons {
             display: flex;
             gap: 15px;
         }
-        
         .btn {
             padding: 10px 20px;
             border-radius: 50px;
@@ -119,71 +106,47 @@
             align-items: center;
             gap: 8px;
         }
-        
         .btn-primary {
             background: var(--primary);
             color: white;
         }
-        
         .btn-primary:hover {
             background: var(--secondary);
             transform: translateY(-3px);
             box-shadow: 0 7px 15px rgba(67, 97, 238, 0.3);
         }
-        
         .btn-outline {
             background: transparent;
             border: 2px solid var(--primary);
             color: var(--primary);
         }
-        
         .btn-outline:hover {
             background: var(--primary);
             color: white;
             transform: translateY(-3px);
         }
-
-        /* Notification bar */
-        #notification {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 2000;
-            padding: 10px;
-            text-align: center;
-            font-weight: 500;
-            display: none;
-            background-color: var(--primary);
-            color: white;
-        }
-        
         /* Hero Section */
         .hero {
             padding: 80px 0;
             background: linear-gradient(to right, rgba(255,255,255,0.9), rgba(245,247,250,0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%234361ee" opacity="0.05"/></svg>');
             background-size: 20px 20px;
         }
-        
         .hero-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
         }
-        
         .hero-text h1 {
             font-size: 3.5rem;
             line-height: 1.2;
             margin-bottom: 20px;
             color: var(--dark);
         }
-        
         .hero-text h1 span {
             color: var(--primary);
             position: relative;
         }
-        
         .hero-text h1 span::after {
             content: '';
             position: absolute;
@@ -194,25 +157,21 @@
             background: rgba(67, 97, 238, 0.2);
             z-index: -1;
         }
-        
         .hero-text p {
             font-size: 1.2rem;
             margin-bottom: 30px;
             color: #555;
             max-width: 500px;
         }
-        
         .hero-buttons {
             display: flex;
             gap: 20px;
         }
-        
         .hero-image {
             position: relative;
             display: flex;
             justify-content: center;
         }
-        
         .hero-card {
             background: white;
             border-radius: 20px;
@@ -222,11 +181,9 @@
             transform: rotate(3deg);
             transition: var(--transition);
         }
-        
         .hero-card:hover {
             transform: rotate(0) translateY(-10px);
         }
-        
         .card-header {
             display: flex;
             justify-content: space-between;
@@ -235,13 +192,11 @@
             padding-bottom: 15px;
             border-bottom: 1px solid #eee;
         }
-        
         .user-info {
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        
         .avatar {
             width: 40px;
             height: 40px;
@@ -253,21 +208,17 @@
             color: white;
             font-weight: bold;
         }
-        
         .user-details h3 {
             font-size: 16px;
         }
-        
         .user-details p {
             font-size: 14px;
             color: #777;
         }
-        
         .verified {
             color: var(--success);
             font-size: 14px;
         }
-        
         .card-image {
             width: 100%;
             height: 200px;
@@ -280,12 +231,10 @@
             color: white;
             font-size: 24px;
         }
-        
         .card-details h4 {
             font-size: 18px;
             margin-bottom: 8px;
         }
-        
         .card-details .meta {
             display: flex;
             justify-content: space-between;
@@ -293,53 +242,44 @@
             color: #666;
             margin-bottom: 15px;
         }
-        
         .price {
             font-size: 22px;
             font-weight: 700;
             color: var(--primary);
         }
-        
         .card-footer {
             display: flex;
             justify-content: space-between;
             margin-top: 15px;
         }
-        
         .card-footer .btn {
             padding: 8px 15px;
             font-size: 14px;
         }
-        
         /* Features Section */
         .features {
             padding: 100px 0;
             background: white;
         }
-        
         .section-header {
             text-align: center;
             max-width: 700px;
             margin: 0 auto 60px;
         }
-        
         .section-header h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             color: var(--dark);
         }
-        
         .section-header p {
             font-size: 1.1rem;
             color: #666;
         }
-        
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
         .feature-card {
             background: white;
             border-radius: 20px;
@@ -348,12 +288,10 @@
             transition: var(--transition);
             text-align: center;
         }
-        
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
-        
         .feature-icon {
             width: 80px;
             height: 80px;
@@ -366,29 +304,24 @@
             color: var(--primary);
             font-size: 30px;
         }
-        
         .feature-card h3 {
             font-size: 22px;
             margin-bottom: 15px;
             color: var(--dark);
         }
-        
         .feature-card p {
             color: #666;
         }
-        
         /* Categories Section */
         .categories {
             padding: 100px 0;
             background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
         }
-        
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
-        
         .category-card {
             background: white;
             border-radius: 15px;
@@ -398,11 +331,9 @@
             position: relative;
             height: 200px;
         }
-        
         .category-card:hover {
             transform: translateY(-10px);
         }
-        
         .category-content {
             position: absolute;
             bottom: 0;
@@ -412,959 +343,85 @@
             background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
             color: white;
         }
-        
-        .category-card h3 {
-            font-size: 22px;
-            margin-bottom: 5px;
-        }
-        
-        .category-card p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        /* How It Works */
+        /* How It Works Section */
         .how-it-works {
-            padding: 100px 0;
-            background: white;
+            /* Additional styles if needed */
         }
-        
-        .steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .steps::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 10%;
-            width: 80%;
-            height: 3px;
-            background: var(--primary);
-            z-index: 0;
-        }
-        
-        .step {
-            text-align: center;
-            width: 200px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: white;
-            font-size: 30px;
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
-        }
-        
-        .step h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        
-        /* Testimonials */
+        /* Testimonials Section */
         .testimonials {
-            padding: 100px 0;
-            background: linear-gradient(to bottom, #e9ecef, #dee2e6);
+            /* Additional styles if needed */
         }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: var(--card-shadow);
-            position: relative;
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 80px;
-            color: rgba(67, 97, 238, 0.1);
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-        
-        .testimonial-content {
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-        }
-        
-        .author-details h4 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        
-        .author-details p {
-            font-size: 14px;
-            color: #666;
-        }
-        
         /* CTA Section */
         .cta {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
             text-align: center;
+            padding: 80px 0;
+            background: var(--primary);
+            color: white;
         }
-        
         .cta h2 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
         }
-        
         .cta p {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
+            margin-bottom: 30px;
         }
-        
         .cta-buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
         }
-        
         .btn-light {
             background: white;
             color: var(--primary);
         }
-        
         .btn-light:hover {
-            background: rgba(255,255,255,0.9);
+            background: var(--secondary);
+            color: white;
             transform: translateY(-3px);
-            box-shadow: 0 7px 15px rgba(0,0,0,0.2);
         }
-        
         /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
-            padding: 70px 0 30px;
+            background: #f8f9fa;
+            padding: 40px 0;
+            color: #666;
         }
-        
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
-        
         .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: var(--dark);
         }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary);
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
-        
         .footer-links a {
-            color: #bbb;
+            color: #666;
             text-decoration: none;
             transition: var(--transition);
         }
-        
         .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
+            color: var(--primary);
         }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
         .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            color: white;
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 18px;
             transition: var(--transition);
         }
-        
         .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-5px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #999;
-            font-size: 14px;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .hero-text p {
-                margin: 0 auto 30px;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .hero-image {
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.8rem;
-            }
-            
-            .steps::before {
-                display: none;
-            }
-            
-            .step {
-                width: 100%;
-                margin-bottom: 40px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        /* Marketplace Page Styles */
-        .marketplace-page {
-            padding: 50px 0;
-        }
-        
-        .filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        
-        .filter-group {
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .filter-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        
-        .filter-group select,
-        .filter-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        
-        .listings-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        
-        .listing-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-        }
-        
-        .listing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .listing-image {
-            height: 200px;
-            background-color: #f0f0f0;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .listing-info {
-            padding: 20px;
-        }
-        
-        .listing-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        .listing-price {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-        
-        .listing-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .listing-actions {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .listing-actions .btn {
-            flex: 1;
-            padding: 8px;
-            font-size: 14px;
-        }
-        
-        /* Login Page Styles */
-        .login-container {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-        }
-        
-        .auth-tabs {
-            display: flex;
-            margin-bottom: 25px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .auth-tab {
-            flex: 1;
-            text-align: center;
-            padding: 15px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-            border-bottom: 3px solid transparent;
-        }
-        
-        .auth-tab.active {
-            color: var(--primary);
-            border-bottom-color: var(--primary);
-        }
-        
-        .auth-form {
-            display: none;
-        }
-        
-        .auth-form.active {
-            display: block;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-        
-        /* Profile Page Styles */
-        .profile-container {
-            max-width: 800px;
-            margin: 50px auto;
-        }
-        
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 40px;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-        }
-        
-        .profile-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 50px;
-            font-weight: bold;
-        }
-        
-        .profile-info {
-            flex: 1;
-        }
-        
-        .profile-name {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        
-        .profile-meta {
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .profile-rating {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: #f1c40f;
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        
-        /* Admin Panel Styles */
-        .admin-container {
-            max-width: 1200px;
-            margin: 40px auto;
-        }
-        
-        .admin-panel {
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            overflow: hidden;
-        }
-        
-        .admin-tabs {
-            display: flex;
-            background: #f8f9fa;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .admin-tab {
-            padding: 15px 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .admin-tab.active {
-            color: var(--primary);
-            border-bottom: 3px solid var(--primary);
-        }
-        
-        .admin-content {
-            padding: 30px;
-        }
-        
-        .admin-section {
-            display: none;
-        }
-        
-        .admin-section.active {
-            display: block;
-        }
-        
-        .admin-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .admin-table th,
-        .admin-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .admin-table th {
-            font-weight: 600;
-            color: #666;
-        }
-        
-        .admin-table tr:hover {
-            background: #f9f9f9;
-        }
-        
-        .admin-actions {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .admin-actions .btn {
-            padding: 6px 12px;
-            font-size: 14px;
-        }
-        
-        /* Chat Styles */
-        .chat-container {
-            display: flex;
-            height: 600px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            overflow: hidden;
-        }
-        
-        .conversations-panel {
-            width: 300px;
-            border-right: 1px solid #eee;
-            overflow-y: auto;
-        }
-        
-        .conversation-item {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .conversation-item:hover {
-            background: #f8f9fa;
-        }
-        
-        .conversation-item.active {
-            background: rgba(67, 97, 238, 0.1);
-        }
-        
-        .conversation-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-        
-        .conversation-name {
-            font-weight: 600;
-        }
-        
-        .conversation-time {
-            font-size: 12px;
-            color: #666;
-        }
-        
-        .conversation-preview {
-            font-size: 14px;
-            color: #666;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .chat-panel {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .chat-header {
-            padding: 15px 20px;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        
-        .chat-messages {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .message {
-            max-width: 70%;
-            padding: 12px 15px;
-            border-radius: 18px;
-            position: relative;
-        }
-        
-        .message.sent {
-            background: var(--primary);
-            color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 5px;
-        }
-        
-        .message.received {
-            background: #f0f0f0;
-            align-self: flex-start;
-            border-bottom-left-radius: 5px;
-        }
-        
-        .message-time {
-            position: absolute;
-            bottom: -20px;
-            font-size: 12px;
-            color: #666;
-            white-space: nowrap;
-        }
-        
-        .message.sent .message-time {
-            right: 0;
-        }
-        
-        .message.received .message-time {
-            left: 0;
-        }
-        
-        .chat-input {
-            padding: 15px;
-            border-top: 1px solid #eee;
-            display: flex;
-            gap: 10px;
-        }
-        
-        .chat-input input {
-            flex: 1;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 25px;
-            font-size: 16px;
-        }
-        
-        .chat-input button {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        
-        /* Create Listing Styles */
-        .create-listing-container {
-            max-width: 800px;
-            margin: 50px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-        }
-        
-        .image-upload {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .image-preview {
-            width: 150px;
-            height: 150px;
-            background: #f0f0f0;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .image-preview img {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        
-        .image-preview .remove-btn {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            width: 25px;
-            height: 25px;
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        
-        .add-image {
-            width: 150px;
-            height: 150px;
-            border: 2px dashed #ddd;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .add-image:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-        
-        /* Detail View Styles */
-        .listing-detail-container {
-            max-width: 1000px;
-            margin: 50px auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            overflow: hidden;
-        }
-        
-        .detail-gallery {
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-        }
-        
-        .main-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .thumbnails {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-        
-        .thumbnail {
-            width: 70px;
-            height: 70px;
-            border: 2px solid white;
-            border-radius: 5px;
-            overflow: hidden;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-        
-        .thumbnail.active,
-        .thumbnail:hover {
-            opacity: 1;
-            transform: translateY(-5px);
-        }
-        
-        .thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .detail-content {
-            padding: 30px;
-        }
-        
-        .detail-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        
-        .detail-title {
-            font-size: 28px;
-            font-weight: 700;
-        }
-        
-        .detail-price {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        .detail-meta {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            color: #666;
-        }
-        
-        .seller-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 10px;
-        }
-        
-        .seller-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        
-        .seller-details {
-            flex: 1;
-        }
-        
-        .seller-name {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .seller-rating {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: #f1c40f;
-        }
-        
-        .detail-description {
-            margin-bottom: 40px;
-            line-height: 1.7;
-        }
-        
-        .detail-actions {
-            display: flex;
-            gap: 15px;
-        }
-        
-        /* Saved Listings Styles */
-        .saved-container {
-            max-width: 1200px;
-            margin: 50px auto;
-        }
-        
-        .saved-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        
-        .empty-state {
-            text-align: center;
-            padding: 50px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-        }
-        
-        .empty-state i {
-            font-size: 60px;
-            color: #ddd;
-            margin-bottom: 20px;
-        }
-        
-        .empty-state h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
+            color: var(--secondary);
         }
     </style>
+    <script type="module" src="config.js"></script>
+    <script type="module" src="app.js"></script>
 </head>
 <body>
-    <!-- Notification bar -->
     <div id="notification" class="hidden"></div>
-    
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -1373,40 +430,22 @@
                 <span>CampusTrade</span>
             </div>
             <nav>
-                <ul id="nav-bar">
-                    <li><a href="#/home">Home</a></li>
-                    <li><a href="#/marketplace">Marketplace</a></li>
-                    <li><a href="#/categories">Categories</a></li>
-                    <li><a href="#/how-it-works">How It Works</a></li>
-                    <li><a href="#/testimonials">Testimonials</a></li>
-                </ul>
+                <ul id="nav-bar"></ul>
             </nav>
-            <div class="nav-buttons" id="nav-buttons">
-                <button id="login-btn" class="btn btn-outline">
-                    <i class="fas fa-sign-in-alt"></i> Log In
-                </button>
-                <button id="signup-btn" class="btn btn-primary">
-                    <i class="fas fa-user-plus"></i> Sign Up
-                </button>
-            </div>
+            <div class="nav-buttons" id="nav-buttons"></div>
         </div>
     </header>
-
-    <!-- Home Content -->
+    <!-- Home Content Start -->
     <div id="home-content">
-        <!-- Hero Section -->
+<!-- Hero Section -->
         <section class="hero">
             <div class="container hero-content">
                 <div class="hero-text">
                     <h1>Trade textbooks, supplies & more on <span>campus</span></h1>
                     <p>The ultimate marketplace for students to buy, sell, and trade academic resources safely and affordably.</p>
                     <div class="hero-buttons">
-                        <a href="#/marketplace" class="btn btn-primary">
-                            <i class="fas fa-shopping-cart"></i> Start Shopping
-                        </a>
-                        <a href="#/new-listing" class="btn btn-outline">
-                            <i class="fas fa-dollar-sign"></i> Sell Items
-                        </a>
+                        <a href="#/marketplace" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Start Shopping</a>
+                        <a href="#/new-listing" class="btn btn-outline"><i class="fas fa-dollar-sign"></i> Sell Items</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -1446,9 +485,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Features Section -->
-        <section class="features">
+        <section class="features" id="testimonials">
             <div class="container">
                 <div class="section-header">
                     <h2>Why CampusTrade Stands Out</h2>
@@ -1500,9 +538,8 @@
                 </div>
             </div>
         </section>
-
         <!-- Categories Section -->
-        <section class="categories">
+        <section class="categories" id="categories">
             <div class="container">
                 <div class="section-header">
                     <h2>Popular Categories</h2>
@@ -1548,49 +585,48 @@
                 </div>
             </div>
         </section>
-
         <!-- How It Works Section -->
-        <section class="how-it-works">
-            <div class="container">
-                <div class="section-header">
-                    <h2>How CampusTrade Works</h2>
-                    <p>Get started in minutes with our simple 4-step process</p>
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How CampusTrade Works</h2>
+                <p>Get started in minutes with our simple 4-step process</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Create Account</h3>
+                    <p>Sign up with your campus email</p>
                 </div>
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-icon">
-                            <i class="fas fa-user-plus"></i>
-                        </div>
-                        <h3>Create Account</h3>
-                        <p>Sign up with your campus email</p>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-camera"></i>
                     </div>
-                    <div class="step">
-                        <div class="step-icon">
-                            <i class="fas fa-camera"></i>
-                        </div>
-                        <h3>List Items</h3>
-                        <p>Snap photos and add details</p>
+                    <h3>List Items</h3>
+                    <p>Snap photos and add details</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-bell"></i>
                     </div>
-                    <div class="step">
-                        <div class="step-icon">
-                            <i class="fas fa-bell"></i>
-                        </div>
-                        <h3>Get Matched</h3>
-                        <p>Connect with interested buyers</p>
+                    <h3>Get Matched</h3>
+                    <p>Connect with interested buyers</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <div class="step">
-                        <div class="step-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3>Meet & Exchange</h3>
-                        <p>Safe campus pickup locations</p>
-                    </div>
+                    <h3>Meet & Exchange</h3>
+                    <p>Safe campus pickup locations</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Testimonials Section -->
-        <section class="testimonials">
+        <section class="testimonials" id="testimonials">
             <div class="container">
                 <div class="section-header">
                     <h2>What Students Say</h2>
@@ -1636,27 +672,20 @@
                 </div>
             </div>
         </section>
-
         <!-- CTA Section -->
         <section class="cta">
             <div class="container">
                 <h2>Join the CampusTrade Revolution</h2>
                 <p>Start saving money on textbooks and supplies, or turn your unused items into cash today. The ultimate campus marketplace is here!</p>
                 <div class="cta-buttons">
-                    <a href="#/marketplace" class="btn btn-light">
-                        <i class="fas fa-shopping-cart"></i> Browse Listings
-                    </a>
-                    <a href="#/new-listing" class="btn btn-outline">
-                        <i class="fas fa-dollar-sign"></i> Start Selling
-                    </a>
+                    <a href="#/marketplace" class="btn btn-light"><i class="fas fa-shopping-cart"></i> Browse Listings</a>
+                    <a href="#/new-listing" class="btn btn-outline"><i class="fas fa-dollar-sign"></i> Start Selling</a>
                 </div>
             </div>
         </section>
     </div>
-
-    <!-- Main content area for dynamic pages -->
+    <!-- End of Home Content -->
     <main id="content" style="display:none;"></main>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1679,30 +708,30 @@
                     <h3>Marketplace</h3>
                     <ul class="footer-links">
                         <li><a href="#/marketplace">Browse Listings</a></li>
-                        <li><a href="#/categories">Categories</a></li>
-                        <li><a href="#/featured">Featured Items</a></li>
-                        <li><a href="#/new-arrivals">New Arrivals</a></li>
-                        <li><a href="#/deals">Deals & Discounts</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#/marketplace">Featured Items</a></li>
+                        <li><a href="#/marketplace">New Arrivals</a></li>
+                        <li><a href="#/marketplace">Deals & Discounts</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>For Students</h3>
                     <ul class="footer-links">
-                        <li><a href="#/how-to-sell">How to Sell</a></li>
-                        <li><a href="#/buying-guide">Buying Guide</a></li>
-                        <li><a href="#/safety-tips">Safety Tips</a></li>
-                        <li><a href="#/ambassadors">Campus Ambassadors</a></li>
-                        <li><a href="#/student-discounts">Student Discounts</a></li>
+                        <li><a href="#/new-listing">How to Sell</a></li>
+                        <li><a href="#/marketplace">Buying Guide</a></li>
+                        <li><a href="#">Safety Tips</a></li>
+                        <li><a href="#">Campus Ambassadors</a></li>
+                        <li><a href="#">Student Discounts</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Support</h3>
                     <ul class="footer-links">
-                        <li><a href="#/help-center">Help Center</a></li>
-                        <li><a href="#/faqs">FAQs</a></li>
-                        <li><a href="#/contact">Contact Us</a></li>
-                        <li><a href="#/terms">Terms of Service</a></li>
-                        <li><a href="#/privacy">Privacy Policy</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
                     </ul>
                 </div>
             </div>
@@ -1711,658 +740,460 @@
             </div>
         </div>
     </footer>
-
-    <!-- Page templates -->
-    <template id="marketplace-template">
-        <section class="marketplace-page">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Student Marketplace</h2>
-                    <p>Find textbooks, electronics, supplies and more from students on your campus</p>
-                </div>
-                
-                <div class="filters">
-                    <div class="filter-group">
-                        <label for="category-filter">Category</label>
-                        <select id="category-filter" class="form-control">
-                            <option value="">All Categories</option>
-                            <option value="textbooks">Textbooks</option>
-                            <option value="electronics">Electronics</option>
-                            <option value="furniture">Furniture</option>
-                            <option value="clothing">Clothing</option>
-                            <option value="supplies">Supplies</option>
-                        </select>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <label for="school-filter">School</label>
-                        <input type="text" id="school-filter" placeholder="Enter school name">
-                    </div>
-                    
-                    <div class="filter-group">
-                        <label for="price-min">Price Range</label>
-                        <div style="display: flex; gap: 10px;">
-                            <input type="number" id="price-min" placeholder="Min">
-                            <input type="number" id="price-max" placeholder="Max">
-                        </div>
-                    </div>
-                    
-                    <div class="filter-group">
-                        <label for="sort-by">Sort By</label>
-                        <select id="sort-by" class="form-control">
-                            <option value="newest">Newest First</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="popular">Most Popular</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="listings-grid">
-                    <div class="listing-card">
-                        <div class="listing-image" style="background-image: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')"></div>
-                        <div class="listing-info">
-                            <h3 class="listing-title">Calculus: Early Transcendentals</h3>
-                            <div class="listing-price">$45.00</div>
-                            <div class="listing-meta">
-                                <span>Mathematics</span>
-                                <span>University of Toronto</span>
-                            </div>
-                            <div class="listing-actions">
-                                <button class="btn btn-outline">Save</button>
-                                <button class="btn btn-primary">View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="listing-card">
-                        <div class="listing-image" style="background-image: url('https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')"></div>
-                        <div class="listing-info">
-                            <h3 class="listing-title">MacBook Pro 2021</h3>
-                            <div class="listing-price">$1,250.00</div>
-                            <div class="listing-meta">
-                                <span>Electronics</span>
-                                <span>McGill University</span>
-                            </div>
-                            <div class="listing-actions">
-                                <button class="btn btn-outline">Save</button>
-                                <button class="btn btn-primary">View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="listing-card">
-                        <div class="listing-image" style="background-image: url('https://images.unsplash.com/photo-1505842381624-c6b0579625a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')"></div>
-                        <div class="listing-info">
-                            <h3 class="listing-title">Organic Chemistry Textbook</h3>
-                            <div class="listing-price">$65.00</div>
-                            <div class="listing-meta">
-                                <span>Chemistry</span>
-                                <span>University of British Columbia</span>
-                            </div>
-                            <div class="listing-actions">
-                                <button class="btn btn-outline">Save</button>
-                                <button class="btn btn-primary">View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="listing-card">
-                        <div class="listing-image" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')"></div>
-                        <div class="listing-info">
-                            <h3 class="listing-title">Desk Lamp with USB Ports</h3>
-                            <div class="listing-price">$25.00</div>
-                            <div class="listing-meta">
-                                <span>Furniture</span>
-                                <span>York University</span>
-                            </div>
-                            <div class="listing-actions">
-                                <button class="btn btn-outline">Save</button>
-                                <button class="btn btn-primary">View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="listing-card">
-                        <div class="listing-image" style="background-image: url('https://images.unsplash.com/photo-1560785496-3c9d27877182?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')"></div>
-                        <div class="listing-info">
-                            <h3 class="listing-title">Graphing Calculator TI-84 Plus</h3>
-                            <div class="listing-price">$75.00</div>
-                            <div class="listing-meta">
-                                <span>Electronics</span>
-                                <span>University of Waterloo</span>
-                            </div>
-                            <div class="listing-actions">
-                                <button class="btn btn-outline">Save</button>
-                                <button class="btn btn-primary">View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="listing-card">
-                        <div class="listing-image" style="background-image: url('https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')"></div>
-                        <div class="listing-info">
-                            <h3 class="listing-title">Art Supplies Set</h3>
-                            <div class="listing-price">$40.00</div>
-                            <div class="listing-meta">
-                                <span>Art</span>
-                                <span>OCAD University</span>
-                            </div>
-                            <div class="listing-actions">
-                                <button class="btn btn-outline">Save</button>
-                                <button class="btn btn-primary">View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-
+    <!-- Templates from the previous index.html for dynamic pages -->
     <template id="login-template">
-        <div class="login-container">
-            <h2 style="text-align: center; margin-bottom: 30px;">Welcome to CampusTrade</h2>
-            
-            <div class="auth-tabs">
-                <div class="auth-tab active" data-tab="login">Login</div>
-                <div class="auth-tab" data-tab="signup">Sign Up</div>
-            </div>
-            
-            <form class="auth-form active" id="login-form">
-                <div class="form-group">
-                    <label for="login-email">Email Address</label>
-                    <input type="email" id="login-email" placeholder="your.email@university.ca" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" placeholder="Enter your password" required>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%;">
-                    Log In
-                </button>
-            </form>
-            
-            <form class="auth-form" id="signup-form">
-                <div class="form-group">
-                    <label for="signup-name">Full Name</label>
-                    <input type="text" id="signup-name" placeholder="Your full name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="signup-email">University Email</label>
-                    <input type="email" id="signup-email" placeholder="your.email@university.ca" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="signup-school">University</label>
-                    <input type="text" id="signup-school" placeholder="Your university" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="signup-program">Program</label>
-                    <input type="text" id="signup-program" placeholder="Your program of study">
-                </div>
-                
-                <div class="form-group">
-                    <label for="signup-password">Create Password</label>
-                    <input type="password" id="signup-password" placeholder="Create a strong password" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="signup-confirm">Confirm Password</label>
-                    <input type="password" id="signup-confirm" placeholder="Confirm your password" required>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%;">
-                    Create Account
-                </button>
-            </form>
+    <div class="max-w-md mx-auto bg-white shadow-md rounded p-6 mt-8">
+      <h2 class="text-2xl font-semibold mb-4 text-center">Welcome</h2>
+      <div id="auth-tabs" class="mb-4 flex justify-center space-x-4">
+        <button
+          data-auth-tab="signin"
+          class="auth-tab px-3 py-2 rounded text-white bg-blue-600 hover:bg-blue-700"
+        >
+          Sign In
+        </button>
+        <button
+          data-auth-tab="signup"
+          class="auth-tab px-3 py-2 rounded text-blue-600 bg-blue-100 hover:bg-blue-200"
+        >
+          Sign Up
+        </button>
+      </div>
+      <!-- Sign-in form -->
+      <form id="signin-form" class="space-y-4">
+        <div>
+          <label for="signin-email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input
+            type="email"
+            id="signin-email"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            required
+          />
         </div>
-    </template>
-
-    <template id="profile-template">
-        <div class="profile-container">
-            <div class="profile-header">
-                <div class="profile-avatar">JS</div>
-                <div class="profile-info">
-                    <h1 class="profile-name">Jane Smith</h1>
-                    <div class="profile-meta">
-                        <div>Computer Science, University of Toronto</div>
-                        <div>Toronto, ON</div>
-                    </div>
-                    <div class="profile-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <span>4.5 (28 reviews)</span>
-                    </div>
-                    <p>Active member since September 2022</p>
-                </div>
-            </div>
-            
-            <div class="section-header">
-                <h2>My Listings</h2>
-                <p>Items you're currently selling on CampusTrade</p>
-            </div>
-            
-            <div class="listings-grid">
-                <div class="listing-card">
-                    <div class="listing-image" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="listing-info">
-                        <h3 class="listing-title">Desk Lamp with USB Ports</h3>
-                        <div class="listing-price">$25.00</div>
-                        <div class="listing-actions">
-                            <button class="btn btn-outline">Edit</button>
-                            <button class="btn btn-primary">View</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="listing-card">
-                    <div class="listing-image" style="background-image: url('https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="listing-info">
-                        <h3 class="listing-title">Art Supplies Set</h3>
-                        <div class="listing-price">$40.00</div>
-                        <div class="listing-actions">
-                            <button class="btn btn-outline">Edit</button>
-                            <button class="btn btn-primary">View</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section-header" style="margin-top: 50px;">
-                <h2>Saved Listings</h2>
-                <p>Items you've saved for later</p>
-            </div>
-            
-            <div class="listings-grid">
-                <div class="listing-card">
-                    <div class="listing-image" style="background-image: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="listing-info">
-                        <h3 class="listing-title">Calculus: Early Transcendentals</h3>
-                        <div class="listing-price">$45.00</div>
-                        <div class="listing-actions">
-                            <button class="btn btn-outline">Remove</button>
-                            <button class="btn btn-primary">View</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <label for="signin-password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input
+            type="password"
+            id="signin-password"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            required
+          />
         </div>
-    </template>
-
-    <template id="admin-template">
-        <div class="admin-container">
-            <h1 style="margin-bottom: 30px;">Admin Dashboard</h1>
-            
-            <div class="admin-panel">
-                <div class="admin-tabs">
-                    <div class="admin-tab active" data-tab="reported">Reported Listings</div>
-                    <div class="admin-tab" data-tab="users">User Management</div>
-                    <div class="admin-tab" data-tab="analytics">Analytics</div>
-                </div>
-                
-                <div class="admin-content">
-                    <div class="admin-section active" id="reported-section">
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                    <th>Listing</th>
-                                    <th>Reported By</th>
-                                    <th>Reason</th>
-                                    <th>Date</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Used iPhone 12 Pro Max</td>
-                                    <td>user@university.ca</td>
-                                    <td>Suspicious pricing</td>
-                                    <td>Jul 28, 2023</td>
-                                    <td class="admin-actions">
-                                        <button class="btn btn-outline">Review</button>
-                                        <button class="btn btn-primary">Remove</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Calculus Textbook</td>
-                                    <td>user2@university.ca</td>
-                                    <td>Incorrect description</td>
-                                    <td>Jul 27, 2023</td>
-                                    <td class="admin-actions">
-                                        <button class="btn btn-outline">Review</button>
-                                        <button class="btn btn-primary">Remove</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="admin-section" id="users-section">
-                        <table class="admin-table">
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Email</th>
-                                    <th>University</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>John Doe</td>
-                                    <td>john@university.ca</td>
-                                    <td>University of Toronto</td>
-                                    <td>Active</td>
-                                    <td class="admin-actions">
-                                        <button class="btn btn-outline">Message</button>
-                                        <button class="btn btn-primary">Suspend</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Jane Smith</td>
-                                    <td>jane@university.ca</td>
-                                    <td>McGill University</td>
-                                    <td>Active</td>
-                                    <td class="admin-actions">
-                                        <button class="btn btn-outline">Message</button>
-                                        <button class="btn btn-primary">Suspend</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <div class="admin-section" id="analytics-section">
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px;">
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
-                                <div style="font-size: 24px; font-weight: 700; color: var(--primary);">1,258</div>
-                                <div>Active Listings</div>
-                            </div>
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
-                                <div style="font-size: 24px; font-weight: 700; color: var(--primary);">5,892</div>
-                                <div>Registered Users</div>
-                            </div>
-                            <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center;">
-                                <div style="font-size: 24px; font-weight: 700; color: var(--primary);">$42,150</div>
-                                <div>Total Sales</div>
-                            </div>
-                        </div>
-                        
-                        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
-                            <h3 style="margin-bottom: 20px;">Recent Activity</h3>
-                            <div style="height: 300px; display: flex; align-items: center; justify-content: center; color: #666;">
-                                Activity chart will appear here
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <button
+          type="submit"
+          class="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Log In
+        </button>
+      </form>
+      <!-- Sign-up form -->
+      <form id="signup-form" class="space-y-4 hidden">
+        <div>
+          <label for="signup-fullname" class="block text-sm font-medium text-gray-700">Full Name</label>
+          <input
+            type="text"
+            id="signup-fullname"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            required
+          />
         </div>
-    </template>
-
-    <template id="chat-template">
-        <div class="chat-container">
-            <div class="conversations-panel">
-                <div class="conversation-item active">
-                    <div class="conversation-header">
-                        <div class="conversation-name">Michael Johnson</div>
-                        <div class="conversation-time">10:42 AM</div>
-                    </div>
-                    <div class="conversation-preview">Hi, is the textbook still available?</div>
-                </div>
-                
-                <div class="conversation-item">
-                    <div class="conversation-header">
-                        <div class="conversation-name">Sarah Williams</div>
-                        <div class="conversation-time">Yesterday</div>
-                    </div>
-                    <div class="conversation-preview">I can meet tomorrow on campus</div>
-                </div>
-                
-                <div class="conversation-item">
-                    <div class="conversation-header">
-                        <div class="conversation-name">Robert Chen</div>
-                        <div class="conversation-time">Jul 26</div>
-                    </div>
-                    <div class="conversation-preview">Thanks for the laptop!</div>
-                </div>
-            </div>
-            
-            <div class="chat-panel">
-                <div class="chat-header">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <div class="avatar">MJ</div>
-                        <div>
-                            <div style="font-weight: 600;">Michael Johnson</div>
-                            <div style="font-size: 14px; color: #666;">Online</div>
-                        </div>
-                    </div>
-                    <button class="btn btn-outline">Block User</button>
-                </div>
-                
-                <div class="chat-messages">
-                    <div class="message received">
-                        Hi, is the Calculus textbook still available?
-                        <div class="message-time">10:42 AM</div>
-                    </div>
-                    
-                    <div class="message sent">
-                        Yes, it's still available. Are you interested?
-                        <div class="message-time">10:43 AM</div>
-                    </div>
-                    
-                    <div class="message received">
-                        Yes! Can I see some more photos?
-                        <div class="message-time">10:45 AM</div>
-                    </div>
-                </div>
-                
-                <div class="chat-input">
-                    <input type="text" placeholder="Type a message...">
-                    <button><i class="fas fa-paper-plane"></i></button>
-                </div>
-            </div>
+        <div>
+          <label for="signup-email" class="block text-sm font-medium text-gray-700">Student Email</label>
+          <input
+            type="email"
+            id="signup-email"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            placeholder="you@college.ca"
+            required
+          />
         </div>
-    </template>
-
-    <template id="new-listing-template">
-        <div class="create-listing-container">
-            <h1 style="margin-bottom: 30px;">Create New Listing</h1>
-            
-            <div class="form-group">
-                <label for="listing-title">Title</label>
-                <input type="text" id="listing-title" placeholder="What are you selling?" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="listing-description">Description</label>
-                <textarea id="listing-description" rows="4" placeholder="Describe your item in detail" required style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px;"></textarea>
-            </div>
-            
-            <div class="form-group">
-                <label for="listing-price">Price (CAD)</label>
-                <input type="number" id="listing-price" placeholder="0.00" step="0.01" required>
-            </div>
-            
-            <div class="form-group">
-                <label>Category</label>
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-                    <div>
-                        <input type="radio" name="category" id="category-textbooks" value="textbooks">
-                        <label for="category-textbooks">Textbooks</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="category" id="category-electronics" value="electronics">
-                        <label for="category-electronics">Electronics</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="category" id="category-furniture" value="furniture">
-                        <label for="category-furniture">Furniture</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="category" id="category-clothing" value="clothing">
-                        <label for="category-clothing">Clothing</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="category" id="category-supplies" value="supplies">
-                        <label for="category-supplies">Supplies</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="category" id="category-other" value="other">
-                        <label for="category-other">Other</label>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label>Upload Photos (up to 4)</label>
-                <div class="image-upload">
-                    <div class="image-preview">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Preview">
-                        <div class="remove-btn"><i class="fas fa-times"></i></div>
-                    </div>
-                    <div class="add-image">
-                        <i class="fas fa-plus"></i>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="listing-location">Campus Location</label>
-                <input type="text" id="listing-location" placeholder="Where can the item be picked up?" required>
-            </div>
-            
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">
-                Publish Listing
-            </button>
+        <div>
+          <label for="signup-password" class="block text-sm font-medium text-gray-700">Password</label>
+          <input
+            type="password"
+            id="signup-password"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            required
+          />
         </div>
-    </template>
-
-    <template id="detail-template">
-        <div class="listing-detail-container">
-            <div class="detail-gallery">
-                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Desk Lamp" class="main-image">
-                <div class="thumbnails">
-                    <div class="thumbnail active">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Thumbnail">
-                    </div>
-                    <div class="thumbnail">
-                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Thumbnail">
-                    </div>
-                    <div class="thumbnail">
-                        <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Thumbnail">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="detail-content">
-                <div class="detail-header">
-                    <h1 class="detail-title">Desk Lamp with USB Ports</h1>
-                    <div class="detail-price">$25.00</div>
-                </div>
-                
-                <div class="detail-meta">
-                    <div><i class="fas fa-tag"></i> Furniture</div>
-                    <div><i class="fas fa-map-marker-alt"></i> University of Toronto</div>
-                    <div><i class="fas fa-clock"></i> Posted 2 days ago</div>
-                </div>
-                
-                <div class="seller-info">
-                    <div class="seller-avatar">JS</div>
-                    <div class="seller-details">
-                        <div class="seller-name">Jane Smith</div>
-                        <div class="seller-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>4.5 (28 reviews)</span>
-                        </div>
-                    </div>
-                    <button class="btn btn-outline">Message Seller</button>
-                </div>
-                
-                <div class="detail-description">
-                    <p>Excellent condition desk lamp with adjustable brightness and 3 USB ports for charging devices. Perfect for dorm rooms or study spaces.</p>
-                    <p>Features:</p>
-                    <ul>
-                        <li>LED light with 3 brightness settings</li>
-                        <li>3 USB charging ports (5V/2.4A each)</li>
-                        <li>Adjustable neck for flexible positioning</li>
-                        <li>Modern design with touch controls</li>
-                    </ul>
-                    <p>Used for one semester only. Smoke-free home. Original packaging included.</p>
-                </div>
-                
-                <div class="detail-actions">
-                    <button class="btn btn-outline">
-                        <i class="fas fa-heart"></i> Save
-                    </button>
-                    <button class="btn btn-primary">
-                        <i class="fas fa-comment"></i> Message Seller
-                    </button>
-                    <button class="btn btn-primary">
-                        <i class="fas fa-shopping-cart"></i> Buy Now
-                    </button>
-                </div>
-            </div>
+        <div>
+          <label for="signup-school" class="block text-sm font-medium text-gray-700">College/University</label>
+          <input
+            type="text"
+            id="signup-school"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            placeholder="e.g. St. Clair College"
+            required
+          />
         </div>
-    </template>
-
-    <template id="saved-template">
-        <div class="saved-container">
-            <div class="section-header">
-                <h2>Saved Listings</h2>
-                <p>Items you've saved for later</p>
-            </div>
-            
-            <div class="saved-grid">
-                <div class="listing-card">
-                    <div class="listing-image" style="background-image: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="listing-info">
-                        <h3 class="listing-title">Calculus: Early Transcendentals</h3>
-                        <div class="listing-price">$45.00</div>
-                        <div class="listing-meta">
-                            <span>Mathematics</span>
-                            <span>University of Toronto</span>
-                        </div>
-                        <div class="listing-actions">
-                            <button class="btn btn-outline">Remove</button>
-                            <button class="btn btn-primary">View</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="listing-card">
-                    <div class="listing-image" style="background-image: url('https://images.unsplash.com/photo-1581093458799-ee9c0e460739?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="listing-info">
-                        <h3 class="listing-title">MacBook Pro 2021</h3>
-                        <div class="listing-price">$1,250.00</div>
-                        <div class="listing-meta">
-                            <span>Electronics</span>
-                            <span>McGill University</span>
-                        </div>
-                        <div class="listing-actions">
-                            <button class="btn btn-outline">Remove</button>
-                            <button class="btn btn-primary">View</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <label for="signup-program" class="block text-sm font-medium text-gray-700">Program (optional)</label>
+          <input
+            type="text"
+            id="signup-program"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            placeholder="e.g. Graphic Design"
+          />
         </div>
-    </template>
-
-    <!-- JavaScript -->
-    <script type="module" src="config.js"></script>
-    <script type="module" src="app.js"></script>
+        <button
+          type="submit"
+          class="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Create Account
+        </button>
+      </form>
+    </div>
+  </template>
+  <template id="home-template">
+    <div class="home-page">
+      <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-16 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 class="text-4xl font-bold mb-4">Trade textbooks, supplies &amp; more on campus</h2>
+            <p class="mb-6 text-lg">Join Canada’s exclusive student marketplace to buy, sell or donate your school gear.</p>
+            <div class="flex flex-wrap space-x-4 space-y-2 md:space-y-0">
+              <a href="#/home" class="inline-block px-6 py-3 bg-white text-blue-600 font-medium rounded shadow hover:bg-gray-100">Start Shopping</a>
+              <a href="#/new-listing" class="inline-block px-6 py-3 bg-blue-700 text-white font-medium rounded shadow hover:bg-blue-800">Sell Items</a>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <div class="relative h-64 w-full flex items-center justify-center">
+              <div class="bg-white rounded-lg shadow-lg p-4 w-72 transform hover:scale-105 transition-transform">
+                <div class="h-40 bg-gray-200 rounded mb-3 flex items-center justify-center">
+                  <i class="fas fa-image fa-3x text-gray-400"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-1">Sample Listing</h3>
+                <p class="text-sm text-gray-600 mb-2">Stylish backpack in great condition</p>
+                <div class="flex justify-between items-center">
+                  <span class="text-blue-600 font-bold">$25</span>
+                  <span class="text-gray-500 text-sm">Books</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+          <h3 class="text-3xl font-bold text-center mb-8">Why Students Love Us</h3>
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="bg-white rounded-lg shadow p-6 text-center flex flex-col items-center">
+              <i class="fas fa-lock text-3xl text-blue-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">Secure Campus Network</h4>
+              <p class="text-sm text-gray-600">Only verified .ca student emails can join, keeping the community safe.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6 text-center flex flex-col items-center">
+              <i class="fas fa-tags text-3xl text-blue-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">Save Up To 70%</h4>
+              <p class="text-sm text-gray-600">Buy used textbooks and supplies at a fraction of retail prices.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6 text-center flex flex-col items-center">
+              <i class="fas fa-coins text-3xl text-blue-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">Earn Cash Fast</h4>
+              <p class="text-sm text-gray-600">Turn your old gear into cash by listing items for your peers.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6 text-center flex flex-col items-center">
+              <i class="fas fa-leaf text-3xl text-blue-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">Eco‑Friendly Trading</h4>
+              <p class="text-sm text-gray-600">Reduce waste by recycling textbooks and tools across campuses.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6 text-center flex flex-col items-center">
+              <i class="fas fa-map-marker-alt text-3xl text-blue-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">Campus Pickup</h4>
+              <p class="text-sm text-gray-600">Meet up on campus or nearby to exchange items securely.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6 text-center flex flex-col items-center">
+              <i class="fas fa-bell text-3x text-blue-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">Course Alerts</h4>
+              <p class="text-sm text-gray-600">Get notified when items from your courses become available.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <h3 class="text-3xl font-bold text-center mb-8">Popular Categories</h3>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="relative rounded-lg overflow-hidden bg-gradient-to-br from-purple-500 to-fuchsia-600 text-white p-6 flex flex-col justify-end h-40">
+              <i class="fas fa-book fa-3x mb-2"></i>
+              <span class="text-xl font-semibold">Books</span>
+            </div>
+            <div class="relative rounded-lg overflow-hidden bg-gradient-to-br from-green-500 to-emerald-600 text-white p-6 flex flex-col justify-end h-40">
+              <i class="fas fa-laptop-code fa-3x mb-2"></i>
+              <span class="text-xl font-semibold">Electronics</span>
+            </div>
+            <div class="relative rounded-lg overflow-hidden bg-gradient-to-br from-yellow-500 to-amber-600 text-white p-6 flex flex-col justify-end h-40">
+              <i class="fas fa-paint-brush fa-3x mb-2"></i>
+              <span class="text-xl font-semibold">Art Supplies</span>
+            </div>
+            <div class="relative rounded-lg overflow-hidden bg-gradient-to-br from-pink-500 to-rose-600 text-white p-6 flex flex-col justify-end h-40">
+              <i class="fas fa-tshirt fa-3x mb-2"></i>
+              <span class="text-xl font-semibold">Clothing</span>
+            </div>
+            <div class="relative rounded-lg overflow-hidden bg-gradient-to-br from-teal-500 to-cyan-600 text-white p-6 flex flex-col justify-end h-40">
+              <i class="fas fa-couch fa-3x mb-2"></i>
+              <span class="text-xl font-semibold">Furniture</span>
+            </div>
+            <div class="relative rounded-lg overflow-hidden bg-gradient-to-br from-indigo-500 to-blue-600 text-white p-6 flex flex-col justify-end h-40">
+              <i class="fas fa-box-open fa-3x mb-2"></i>
+              <span class="text-xl font-semibold">Other</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+          <h3 class="text-3xl font-bold text-center mb-8">How It Works</h3>
+          <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+            <div class="text-center p-4">
+              <i class="fas fa-user-plus text-4xl text-blue-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">Create Account</h4>
+              <p class="text-sm text-gray-600">Sign up using your .ca email to access the marketplace.</p>
+            </div>
+            <div class="text-center p-4">
+              <i class="fas fa-upload text-4xl text-blue-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">List Items</h4>
+              <p class="text-sm text-gray-600">Upload photos, set a price and share details about your item.</p>
+            </div>
+            <div class="text-center p-4">
+              <i class="fas fa-comments text-4xl text-blue-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">Connect &amp; Chat</h4>
+              <p class="text-sm text-gray-600">Interested buyers can message you directly to arrange pickup.</p>
+            </div>
+            <div class="text-center p-4">
+              <i class="fas fa-handshake text-4xl text-blue-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">Exchange &amp; Rate</h4>
+              <p class="text-sm text-gray-600">Meet up to exchange and leave feedback for one another.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-12 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+          <h3 class="text-3xl font-bold mb-4">Join the Student Marketplace Revolution</h3>
+          <p class="mb-6 text-lg">Empower your campus community – recycle resources, save money and help fellow students succeed.</p>
+          <div class="flex justify-center space-x-4">
+            <a href="#/marketplace" class="px-6 py-3 bg-white text-blue-600 font-medium rounded shadow hover:bg-gray-100">Browse Listings</a>
+            <a href="#/new-listing" class="px-6 py-3 bg-blue-700 text-white font-medium rounded shadow hover:bg-blue-800">Post a Listing</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </template>
+  <template id="marketplace-template">
+    <div class="py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-wrap gap-4 justify-between items-end mb-6">
+          <div class="flex-1 min-w-[200px] mr-2">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search listings..."
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+            />
+          </div>
+          <div class="flex-1 min-w-[150px] mr-2">
+            <select
+              id="category-filter"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+            >
+              <option value="">All Categories</option>
+              <option value="books">Books</option>
+              <option value="art">Art Kits</option>
+              <option value="clothing">Clothing</option>
+              <option value="electronics">Electronics</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="flex-1 min-w-[150px] mr-2">
+            <input
+              type="text"
+              id="school-filter"
+              placeholder="School name"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+            />
+          </div>
+          <div class="flex-1 min-w-[150px] mr-2">
+            <input
+              type="text"
+              id="program-filter"
+              placeholder="Program name"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+            />
+          </div>
+          <div class="flex items-center space-x-2 min-w-[200px]">
+            <input
+              type="number"
+              id="price-min"
+              placeholder="Min price"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+            />
+            <span class="text-gray-500">–</span>
+            <input
+              type="number"
+              id="price-max"
+              placeholder="Max price"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+            />
+          </div>
+          <div class="flex-1 min-w-[150px] mr-2">
+            <select
+              id="sort-order"
+              class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+            >
+              <option value="newest">Newest</option>
+              <option value="lowprice">Price: Low to High</option>
+              <option value="highprice">Price: High to Low</option>
+              <option value="mostviewed">Most Viewed</option>
+            </select>
+          </div>
+          <div>
+            <a href="#/new-listing" class="block px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700">Sell Item</a>
+          </div>
+        </div>
+        <div id="listings-grid" class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+      </div>
+    </div>
+  </template>
+  <template id="new-listing-template">
+    <div class="max-w-2xl mx-auto bg-white shadow-md rounded p-6 mt-4">
+      <h2 class="text-2xl font-semibold mb-4" id="listing-form-title">New Listing</h2>
+      <form id="listing-form" class="space-y-4">
+        <div>
+          <label for="listing-title" class="block text-sm font-medium text-gray-700">Title</label>
+          <input
+            type="text"
+            id="listing-title"
+            required
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+          />
+        </div>
+        <div>
+          <label for="listing-description" class="block text-sm font-medium text-gray-700">Description</label>
+          <textarea
+            id="listing-description"
+            rows="4"
+            required
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+          ></textarea>
+        </div>
+        <div>
+          <label for="listing-price" class="block text-sm font-medium text-gray-700">Price (CAD)</label>
+          <input
+            type="number"
+            id="listing-price"
+            min="0"
+            required
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+          />
+        </div>
+        <div>
+          <label for="listing-category" class="block text-sm font-medium text-gray-700">Category</label>
+          <select
+            id="listing-category"
+            required
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+          >
+            <option value="books">Books</option>
+            <option value="art">Art Kits</option>
+            <option value="clothing">Clothing</option>
+            <option value="electronics">Electronics</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Photos (up to 4)</label>
+          <input
+            type="file"
+            id="listing-images"
+            accept="image/*"
+            multiple
+            class="mt-1 block w-full text-sm text-gray-500"
+          />
+        </div>
+        <div>
+          <label for="listing-school" class="block text-sm font-medium text-gray-700">College/University</label>
+          <input
+            type="text"
+            id="listing-school"
+            required
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+          />
+        </div>
+        <div>
+          <label for="listing-program" class="block text-sm font-medium text-gray-700">Program (optional)</label>
+          <input
+            type="text"
+            id="listing-program"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Save Listing
+        </button>
+      </form>
+    </div>
+  </template>
+  <template id="listing-details-template">
+    <div class="max-w-4xl mx-auto bg-white shadow-md rounded p-6 mt-4">
+      <div id="listing-details-content" class="space-y-4"></div>
+    </div>
+  </template>
+  <template id="profile-template">
+    <div class="max-w-3xl mx-auto bg-white shadow-md rounded p-6 mt-4">
+      <div id="profile-content" class="space-y-4"></div>
+    </div>
+  </template>
+  <template id="messages-template">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mt-4">
+      <aside class="w-full md:w-1/3 bg-white shadow-md rounded p-4">
+        <h2 class="text-xl font-semibold mb-4">Messages</h2>
+        <ul id="conversation-list" class="space-y-2 overflow-y-auto max-h-[70vh]"></ul>
+      </aside>
+      <section class="flex-1 bg-white shadow-md rounded p-4 flex flex-col">
+        <div id="chat-header" class="border-b pb-2 mb-2 flex justify-between items-center">
+          <h2 id="chat-title" class="text-xl font-semibold"></h2>
+          <button id="block-user-btn" class="hidden px-3 py-1 text-sm bg-red-100 text-red-700 rounded">Block User</button>
+        </div>
+        <div id="chat-messages" class="flex-1 overflow-y-auto space-y-2 mb-2"></div>
+        <form id="message-form" class="flex space-x-2" autocomplete="off">
+          <input
+            type="text"
+            id="message-input"
+            placeholder="Type a message..."
+            class="flex-1 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2"
+            required
+          />
+          <button
+            type="submit"
+            class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Send
+          </button>
+        </form>
+      </section>
+    </div>
+  </template>
+  <template id="saved-template">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-4">Saved Listings</h2>
+      <div id="saved-listings" class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+    </div>
+  </template>
+  <template id="admin-template">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-4">Admin Panel</h2>
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">Flagged Listings</h3>
+        <div id="flagged-listings" class="space-y-4"></div>
+      </div>
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">Blocked Users</h3>
+        <div id="blocked-users" class="space-y-2"></div>
+      </div>
+    </div>
+  </template>
 </body>
-</html>
+</html>  
